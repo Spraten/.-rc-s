@@ -10,7 +10,7 @@
 // <BoxName> // <TGT_IP> // <Domain> // <TGT_Port> // <Username> // <Password> // 
 
 ====/etc/hosts/===
-echo "\n<TGT_IP>     <Domain>" >> sudo tee -a /etc/hosts ; tail -5 /etc/hosts 
+echo "\n<TGT_IP>     <Domain>" | sudo tee -a /etc/hosts ; tail -5 /etc/hosts 
 
 ===Browser===
 https://<Domain>/
