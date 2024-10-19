@@ -1,0 +1,31 @@
+:%s/<>/ /g
+:%s/<BoxName>/ /g
+:%s/<TGT_IP>/ /g
+:%s/<Domain>/ /g
+:%s/<TGT_Port>/ /g
+:%s/<Username>/ /g
+:%s/<Password>/ /g
+
+
+// <BoxName> // <TGT_IP> // <Domain> // <TGT_Port> // <Username> // <Password> // 
+
+====/etc/hosts/===
+echo "\n<TGT_IP>     <Domain>" >> sudo tee -a /etc/hosts ; tail -5 /etc/hosts 
+
+===Browser===
+https://<Domain>/
+
+===Dir Buster=== 
+                                                                                                                                                                    
+====NAMP===
+nmap -Pn -sV <TGT_IP> -p 20,21,22,23,42,53,80,88,123,135,135,139,445,389,1027,1688,3128,3389,500,4500,464,1900,443
+====SSH====
+#SSH IP
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -MS /tmp/ms-<TGT_IP> <Username>@<IP>
+#SSH Domain 
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -MS /tmp/ms-<TGT_IP> <Username>@<Domain>
+
+
+
+=======Box==========
+http://instant.htb/
