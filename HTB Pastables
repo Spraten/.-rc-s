@@ -9,6 +9,13 @@
 
 // <BoxName> // <TGT_IP> // <Domain> // <TGT_Port> // <Username> // <Password> // 
 
+====setting up====
+mkdir ~/<BoxName>
+mkdir ~/<BoxName>/working
+mkdir ~/<BoxName>/downloads
+mkdir ~/<BoxName>/collects
+touch ~/<BoxName>/notes
+
 ====/etc/hosts/===
 echo "\n<TGT_IP>     <Domain>" | sudo tee -a /etc/hosts ; tail -5 /etc/hosts 
 
