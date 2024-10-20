@@ -22,6 +22,7 @@ set shiftwidth=4        " when shifting with Shift+>> or Shift+<< move 4 spaces
 "set number              " show line numbers
 set cursorline          " highlight current line
 set mouse+=r            " do not select line numbers with mouse when copying
+set paste
 
 " VISUAL EASE
 set wildmenu            " allow command autocompletion in menu
@@ -98,7 +99,7 @@ highlight link nmap_header nmap_header_format
 syntax match nmap_openport /\d\+\(\/tcp\|\/udp\)\s\+open/
 highlight nmap_openport_format ctermfg=2
 highlight link nmap_openport nmap_openport_format
-
+"]]
 
 "}}
 
@@ -138,6 +139,23 @@ syntax match ip6addr /\<\(\:\(\:\_[A-Fa-f0-9]\{1,4\}\)\{1,7\}\)\>/
 
 highlight IP6format term=bold cterm=bold ctermfg=220 ctermbg=NONE gui=bold font=NONE guifg=#ffd700 guibg=NONE
 highlight link ip6addr IP6format
+"]]
+
+" [[ Highlight HomePaths                                                                                                       
+" ~\/\w*\/?\w*
+syntax match homepath /~\/\w*\/?\w*/
+
+highlight HomePathFormat term=bold cterm=bold ctermfg=DarkMagenta ctermbg=NONE gui=bold font=NONE guifg=Yellow guibg=NONE
+highlight link homepath HomePathFormat
+"]]
+
+"\[[ Highlight Dirpaths
+"\/\w*\/?\w*
+syntax match dirpath /\/\w*\/?\w*/
+
+highlight DirPathFormat term=bold cterm=bold ctermfg=DarkCyan ctermbg=NONE gui=bold font=NONE guifg=LightBlue guibg=NONE
+highlight link dirpath DirPathFormat
+
 "]]
 
 
